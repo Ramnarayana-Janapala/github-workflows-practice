@@ -14,3 +14,17 @@ A **workflow** defines an automated process that runs in response to specific ev
 - **Jobs** can run **in parallel** by default or **sequentially** when dependencies are defined using `needs`.
 
 This structure allows workflows to be modular, parallelizable, and easy to maintain.
+
+Events are GitHub activities that trigger workflows:
+
+- `push` - Someone pushes code
+- `pull_request` - Someone opens/updates a PR
+- `schedule`  - Time-based (cron)
+- `workflow_dispatch` - Manual trigger (click button in UI)
+-  `release` - Someone creates a release
+- `issues` - Issue created/opened
+- Custom: `repository_dispatch`(webhook)
+
+You can filter triggers (only on certain branches, paths, etc.)
+##  Branch-specific Triggers 
+`.github/workflows/branch-filter.yml`
