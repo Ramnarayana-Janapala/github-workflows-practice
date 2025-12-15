@@ -1,0 +1,14 @@
+name: branch-specific triggers
+on:
+    push:
+        branches:
+            - main
+            - develop
+    pull_request:
+        branches: [main]
+jobs:
+    filters:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "Running on branch : ${{ github ref }}"
+            - run: echo "Event : ${{ github.event_name }}"
